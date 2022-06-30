@@ -48,13 +48,10 @@ def generateClass():
     global className
     
     path = os.path.dirname(__file__) + "/templetes/c++/"
-    # print("path:", path)
     
     classHFile = path + "class.h"
     classCppFile = path + "class.cpp"
-    # print("class h: ", classHFile)
-    # print("class cpp: ", classCppFile)
-    
+
     contentH = replaceFile(classHFile, "$D", className.upper())
     contentH = replaceContent("$c", contentH, className)
     contentCpp = replaceFile(classCppFile, "$c", className)
@@ -62,17 +59,12 @@ def generateClass():
     newFileHName = dirPath+ className + ".h"
     newFileCppName = dirPath + className + ".cpp"
     
-    # print("newFileHName: ", newFileHName)
-    # print("newFileCppName: ", newFileCppName)
-    
-    # print("save file")
     saveFile(newFileHName, contentH)
     saveFile(newFileCppName, contentCpp)
+    print("Finish generate!")
     
 if __name__ == "__main__":
     getInput(sys.argv[1:])
-    # print("path: ", dirPath)
-    # print("class name:", className)
     if dirPath != "" and className != "":
         generateClass()
 
