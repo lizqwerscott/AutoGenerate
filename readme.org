@@ -1,0 +1,3 @@
+#+title: AutoGenerator
+* 这是我的自动生成软件
+他可以自动生成c＋＋的类。
